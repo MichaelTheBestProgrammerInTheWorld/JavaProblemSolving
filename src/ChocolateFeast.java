@@ -21,9 +21,12 @@ public class ChocolateFeast {
 
 //        int i = 5/4;
 //        System.out.println(i);
-        System.out.println(chocolateFeast2(10, 2, 5));
-        System.out.println(chocolateFeast2(12, 4, 4));
-        System.out.println(chocolateFeast2(6, 2, 2));
+//        System.out.println(chocolateFeast2(10, 2, 5));
+//        System.out.println(chocolateFeast2(12, 4, 4));
+//        System.out.println(chocolateFeast2(6, 2, 2));
+
+        System.out.println(chocolateFeast(24, 2, 6));
+        System.out.println(chocolateFeast2(24, 2, 6));
     }
 
     //100% correct
