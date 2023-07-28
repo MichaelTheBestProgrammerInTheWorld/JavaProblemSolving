@@ -177,7 +177,8 @@ public class CutTheSticks {
         //System.out.println(cutTheSticks3(test3));
         //System.out.println(cutTheSticks(test3));
         //System.out.println(cutTheSticks2(test3));
-        System.out.println(cutTheSticks4(test3));
+        //System.out.println(cutTheSticks4(test3));
+        System.out.println(cutTheSticks5(test3));
 
     }
 }
