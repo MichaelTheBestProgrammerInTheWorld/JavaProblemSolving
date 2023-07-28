@@ -131,6 +131,20 @@ public class CutTheSticks {
         return result;
     }
 
+    // optimal solution reduces space complexity
+    public static List<Integer> cutTheSticks5(List<Integer> arr){
+        List<Integer> result = new ArrayList<>();
+        while (arr.size() > 0){
+            result.add(arr.size());
+            int shortest = Collections.min(arr);
+            while (arr.remove((Object) shortest)){}
+            for (int i=0; i< arr.size(); i++){
+                arr.set(i, arr.get(i)-shortest);
+            }
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         List<Integer> test1 = new ArrayList<>();
         test1.add(1);
