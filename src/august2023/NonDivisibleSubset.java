@@ -48,6 +48,22 @@ public class NonDivisibleSubset {
         return maxLength;
     }
 
+    //optimal solution works 100% with all test cases
+    public static int nonDivisibleSubset2(int k, List<Integer> s) {
+        // Write your code here
+        int[] remain = new int[k];
+        for(Integer n:s){
+            remain[n%k]++;
+        }
+        int res = Math.min(remain[0], 1);
+        if(k%2 == 0) res += Math.min(remain[k/2], 1);
+        for(int i=1; i<k/2+1; i++){
+            if(i==k-i) continue;
+            res+= Math.max(remain[i], remain[k-i]);
+        }
+        return res;
+    }
+
     public static void main(String[] args) {
         List<Integer> test1 = new ArrayList<>();
         test1.add(19);
@@ -58,12 +74,14 @@ public class NonDivisibleSubset {
         test1.add(25);
         test1.add(22);
         System.out.println(nonDivisibleSubset(4, test1));
+        System.out.println(nonDivisibleSubset2(4, test1));
         List<Integer> test2 = new ArrayList<>();
         test2.add(1);
         test2.add(7);
         test2.add(2);
         test2.add(4);
         System.out.println(nonDivisibleSubset(3, test2));
+        System.out.println(nonDivisibleSubset2(3, test2));
         List<Integer> test3 = new ArrayList<>();
         test3.add(278);
         test3.add(576);
@@ -80,6 +98,7 @@ public class NonDivisibleSubset {
         test3.add(771);
         test3.add(575);
         test3.add(436);
+        System.out.println(nonDivisibleSubset2(7, test3));
         //this case fails
         System.out.println(nonDivisibleSubset(7, test3));
     }
