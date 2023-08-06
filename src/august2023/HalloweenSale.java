@@ -19,7 +19,7 @@ public class HalloweenSale {
         while (s >= p){
             s -= p;
             numOfGames++;
-            if (p > m){
+            if ((p-d) > m){
                 p -= d;
             } else {
                 p = m;
@@ -29,24 +29,6 @@ public class HalloweenSale {
         return numOfGames;
     }
 
-    //optimal solution works 100% with all test cases
-    public static int howManyGames2(int p, int d, int m, int s) {
-        // Return the number of games you can buy
-        int qty=0;
-        int sum = p;
-        int cost = 0;
-        int newPrice = p;
-        while(sum<=s){
-            qty++;
-            if(newPrice-d<=m)newPrice = m;
-            else{
-                newPrice -= d;
-            }
-            cost = newPrice;
-            sum += cost;
-        }
-        return qty;
-    }
 
     public static void main(String[] args) {
         System.out.println(howManyGames(20, 3, 6, 70));
