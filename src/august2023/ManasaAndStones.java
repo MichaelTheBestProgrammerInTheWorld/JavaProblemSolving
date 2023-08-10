@@ -1,6 +1,7 @@
 package august2023;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -9,6 +10,7 @@ https://www.hackerrank.com/challenges/manasa-and-stones/problem?isFullScreen=fal
  */
 public class ManasaAndStones {
 
+    //my own solution gives 100% accurate results but slow in execution
     public static List<Integer> stones(int n, int a, int b) {
         // Write your code here
         List<Integer> probabilities = new ArrayList<>();
@@ -35,6 +37,24 @@ public class ManasaAndStones {
             }
         //}
         return l;
+    }
+
+    //optimal solution working 100% with all test cases
+    public static List<Integer> stones2(int n, int a, int b) {
+        // Write your code here
+        List<Integer> probabilities = new ArrayList<>();
+        if (a == b){
+            probabilities.add((n-1) * b);
+            return probabilities;
+        }
+
+        for (int i=0; i<n; i++){
+            probabilities.add(a * (n-1-i) + b*i);
+        }
+
+        Collections.sort(probabilities);
+
+        return probabilities;
     }
 
     public static void main(String[] args) {
