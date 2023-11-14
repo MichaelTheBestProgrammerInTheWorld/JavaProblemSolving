@@ -1,5 +1,8 @@
 package november2023;
 
+/*
+https://www.hackerrank.com/challenges/happy-ladybugs/problem
+ */
 public class HappyLadybugs {
 
 
